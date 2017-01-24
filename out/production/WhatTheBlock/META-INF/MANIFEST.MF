@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: spigot-api-1.10.2-R0.1-20161012.085000-80.jar
+Main-Class: sk.perri.whattheblock.WhatTheBlockMain
+

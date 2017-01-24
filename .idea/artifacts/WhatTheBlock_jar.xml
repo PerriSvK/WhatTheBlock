@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="WhatTheBlock:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="root">
+      <element id="archive" name="WhatTheBlock.jar">
+        <element id="module-output" name="WhatTheBlock" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+      </element>
+    </root>
+  </artifact>
+</component>

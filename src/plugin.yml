@@ -1,0 +1,21 @@
+name: WhatTheBlock
+author: Perri
+version: 0.0.1
+main: sk.perri.whattheblock.WhatTheBlockMain
+commands:
+    blockinfo:
+        description: Get block info you are looking at or /blockinfo hand to get info aubout block in your hand
+        usage: /blockinfo
+permissions:
+    whattheblock.*:
+        description: All permissions from all commnads of WhatTheBlock plugin
+        children:
+            whattheblock.view: true
+            whattheblock.hand: true
+        default: op
+    whattheblock.view:
+        description: Allows get info about block you looking at
+        default: op
+    whattheblock.hand:
+            description: Allows get info about block you holding
+            default: op
