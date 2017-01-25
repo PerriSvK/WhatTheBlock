@@ -21,7 +21,7 @@ public class WhatTheBlockMain extends JavaPlugin implements Listener
     @Override
     public void onEnable()
     {
-        if(getConfig().isSet("enabled") && getConfig().getBoolean("enabled"))
+        if(getConfig().isSet("enabled") && !(getConfig().getBoolean("enabled")))
         {
             running = false;
             return;
@@ -40,12 +40,16 @@ public class WhatTheBlockMain extends JavaPlugin implements Listener
 
             if(!getConfig().isSet("enabled"))
             {
-                        saveDefaultConfig();
-                        Database.createTable();
-                        getServer().getLogger().info("[WhatTheBlock] Creating database... " + getDataFolder()
-                                .getPath());
+                saveDefaultConfig();
+                getServer().getLogger().info(Database.createTable());
+
+                if(!Database.init(getDataFolder().getPath()+"\\"))
+                {
+                    getLogger().info("[WhatTheBlock] Unable create database connection!");
+                }
             }
         }
+        getServer().getPluginManager().registerEvents(new WTBListener(), this);
         getServer().getLogger().info("Enabling plugin [WhatTheBlock]");
     }
 

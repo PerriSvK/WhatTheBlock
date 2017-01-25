@@ -28,18 +28,28 @@ public class Database
         return true;
     }
 
-    public static boolean createTable()
+    public static String createTable()
     {
-        return insertSql("CREATE TABLE IF NOT EXIST history("+
+        String b = insertSql("CREATE TABLE IF NOT EXISTS history("+
                 "X INT NOT NULL, Y INT NOT NULL, Z INT NOT NULL," +
                 "ACTION VARCHAR(150) NOT NULL, BLOCK VARCHAR(100) NOT NULL," +
                 "PLAYER VARCHAR(200) NOT NULL);");
+        try
+        {
+            c.close();
+        }
+        catch (Exception e)
+        {
+            return e.toString();
+        }
+
+        return b;
     }
 
-    public static boolean insertSql(String sql)
+    public static String insertSql(String sql)
     {
         if(c == null)
-            return false;
+            return "NULL DB!";
 
         Statement st = null;
         try
@@ -50,9 +60,9 @@ public class Database
         }
         catch (Exception e)
         {
-            return false;
+            return e.toString();
         }
-        return true;
+        return "OK";
     }
 
     public static ResultSet selectSql()
