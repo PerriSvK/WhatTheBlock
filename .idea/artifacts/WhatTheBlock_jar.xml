@@ -4,7 +4,9 @@
     <root id="root">
       <element id="archive" name="WhatTheBlock.jar">
         <element id="module-output" name="WhatTheBlock" />
-        <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+        <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+        <element id="file-copy" path="D:/SQLite/sqlite-jdbc-3.16.1.jar" />
+        <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
       </element>
     </root>
   </artifact>
