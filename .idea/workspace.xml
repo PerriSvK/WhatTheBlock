@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a8cfe5c-6e2e-4ebc-a446-129b41c84072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin.yml" afterPath="$PROJECT_DIR$/plugin.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sk/perri/whattheblock/WhatTheBlockMain.java" afterPath="$PROJECT_DIR$/src/sk/perri/whattheblock/WhatTheBlockMain.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -489,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485461628207</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Mistakes correction">
+      <created>1485462390998</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1485462390998</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,7 +539,8 @@
     <MESSAGE value="Adding database" />
     <MESSAGE value="Writing into database on break or place block" />
     <MESSAGE value="Adding players events, history, help, new commands... Version 1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding players events, history, help, new commands... Version 1.0.0" />
+    <MESSAGE value="Mistakes correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mistakes correction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
