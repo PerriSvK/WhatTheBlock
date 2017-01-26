@@ -21,7 +21,7 @@ permissions:
     whattheblock.hand:
         description: Allows get info about block you holding
         default: op
-    whattheblock.cleartable:
+    whattheblock.cleardatabase:
         description: Allows to clear block history database
         default: op
     whattheblock.history:

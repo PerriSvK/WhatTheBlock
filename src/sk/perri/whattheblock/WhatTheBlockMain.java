@@ -99,11 +99,11 @@ public class WhatTheBlockMain extends JavaPlugin implements Listener
     private void printHelp(CommandSender sender)
     {
         sender.sendMessage(ChatColor.GOLD+"[WhatTheBlock] Help:\n" +
-                ChatColor.DARK_RED+"/blockinfo view "+ChatColor.GOLD+"- Print info about block you are looking at\n" +
-                ChatColor.DARK_RED+"/blockinfo hand "+ChatColor.GOLD+"- Print info about blovk in your hand\n" +
-                ChatColor.DARK_RED+"/blockinfo history "+ChatColor.GOLD+"- Print history of block you are looking at\n" +
-                ChatColor.DARK_RED+"/blockinfo cleardatabase "+ChatColor.GOLD+"- Clear all history logs\n"+
-                ChatColor.DARK_RED+"/blockinfo help "+ChatColor.GOLD+"- Print this help");
+                ChatColor.DARK_RED+"/blockinfo view "+ChatColor.GOLD+"- Shows info about block you are looking at\n" +
+                ChatColor.DARK_RED+"/blockinfo hand "+ChatColor.GOLD+"- Shows info about blovk in your hand\n" +
+                ChatColor.DARK_RED+"/blockinfo history "+ChatColor.GOLD+"- Shows history of block you are looking at\n" +
+                ChatColor.DARK_RED+"/blockinfo cleardatabase "+ChatColor.GOLD+"- Clears all history logs\n"+
+                ChatColor.DARK_RED+"/blockinfo help "+ChatColor.GOLD+"- Shows this help");
     }
 
     @SuppressWarnings( "deprecation" )
