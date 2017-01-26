@@ -1,6 +1,6 @@
 name: WhatTheBlock
 author: Perri
-version: 0.0.1
+version: 1.0.0
 main: sk.perri.whattheblock.WhatTheBlockMain
 commands:
     blockinfo:
@@ -12,10 +12,18 @@ permissions:
         children:
             whattheblock.view: true
             whattheblock.hand: true
+            whattheblock.cleardatabase: true
+            whattheblock.history: true
         default: op
     whattheblock.view:
         description: Allows get info about block you looking at
         default: op
     whattheblock.hand:
-            description: Allows get info about block you holding
-            default: op
+        description: Allows get info about block you holding
+        default: op
+    whattheblock.cleartable:
+        description: Allows to clear block history database
+        default: op
+    whattheblock.history:
+        description: Allows to print history of the block
+        default: op

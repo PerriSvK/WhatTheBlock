@@ -1,36 +1,37 @@
 package sk.perri.whattheblock.db;
 
-import java.io.File;
 import java.sql.*;
 
 public class Database
 {
     private static Connection c = null;
     public static String INS_PREF = "INSERT INTO history(X, Y, Z, ACTION, BLOCK, PLAYER) VALUES(";
+    private static String path = "";
 
     private Database()
     {
 
     }
 
-    public static boolean init(String path)
+    public static String init(String path)
     {
         try
         {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:"+path+"blocks.db");
+            Database.path = path;
         }
         catch (Exception e)
         {
-            return false;
+            return "Database connection error: "+e.toString();
         }
 
-        return true;
+        return "Connection with database established successfully!";
     }
 
     public static String createTable()
     {
-        String b = insertSql("CREATE TABLE IF NOT EXISTS history("+
+        insertSql("CREATE TABLE IF NOT EXISTS history("+
                 "X INT NOT NULL, Y INT NOT NULL, Z INT NOT NULL," +
                 "ACTION VARCHAR(150) NOT NULL, BLOCK VARCHAR(100) NOT NULL," +
                 "PLAYER VARCHAR(200) NOT NULL);");
@@ -40,18 +41,17 @@ public class Database
         }
         catch (Exception e)
         {
-            return e.toString();
+            return "Error creating table: "+e.toString();
         }
 
-        return b;
+        return "Table created successfully";
     }
 
     public static String insertSql(String sql)
     {
         if(c == null)
-            return "NULL DB!";
-
-        Statement st = null;
+            return "Error connect to database!";
+        Statement st;
         try
         {
             st = c.createStatement();
@@ -60,12 +60,12 @@ public class Database
         }
         catch (Exception e)
         {
-            return e.toString();
+            return "Write error: "+e.toString();
         }
-        return "OK";
+        return "Writing completed!";
     }
 
-    public static ResultSet selectSql()
+    public static ResultSet selectSql(int x, int y, int z)
     {
         if(c == null)
             return null;
@@ -73,7 +73,7 @@ public class Database
         try
         {
             Statement st = c.createStatement();
-            return st.executeQuery("SELECT * FROM history");
+            return st.executeQuery("SELECT * FROM history WHERE X="+x+" AND Y="+y+" AND Z="+z+";");
         }
         catch (Exception e)
         {
@@ -92,6 +92,7 @@ public class Database
             st.executeUpdate("DROP TABLE history");
 
             createTable();
+            init(path);
 
             return true;
         }
@@ -107,9 +108,8 @@ public class Database
         {
             c.close();
         }
-        catch (Exception e)
+        catch (Exception ignored)
         {
-            return;
         }
     }
 }
